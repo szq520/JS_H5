@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>szq的前端学习笔记</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <link rel="shortcut icon" type="images/x-icon" href="/_media/favicon.ico">
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="keywords" content="个人博客,个人网站,个人文档,web前端,前端学习笔记">
+  <meta name="description" content="------------------------">
+  <link rel="stylesheet" href="./lib/vue.css">
+  <link rel="stylesheet" href="./lib/main.css">
+  <script>
+    var _hmt = _hmt || [];
+    // (function () {
+    //   var hm = document.createElement("script");
+    //   hm.src = "https://hm.baidu.com/hm.js?fde5bc73137b15d09b1686fe514b662a";
+    //   var s = document.getElementsByTagName("script")[0];
+    //   s.parentNode.insertBefore(hm, s);
+    // })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'Top',
+      nameLink: '/',
+      // 主题色
+      themeColor: '#02c39a',
+      // 入口文件
+      homepage: 'home.md',
+      // 右上方渲染github挂钟
+      repo: 'szq520',
+      // 定制侧边栏
+      loadSidebar: true,
+      // 抓取目录渲染
+      maxLevel: 3,
+      subMaxLevel: 3,
+      // 开启封面页
+      coverpage: false,
+      // 切换页面后跳到顶部
+      auto2top: false,
+      // 小屏设备下合并导航栏到侧边栏
+      mergeNavbar: true,
+      // 搜索框
+      search: {
+        // 目录
+        paths: 'auto',
+        // 默认文字
+        placeholder: '搜索',
+        // 404显示
+        noData: '找不到结果'
+      },
+      executeScript: true
+    }
+  </script>
+  <script src="./lib/docsify.min.js"></script>
+  <script src="./lib/prism-bash.js"></script>
+  <script src="./lib/prism-jsx.js"></script>
+  <script src="./lib/prism-tsx.js"></script>
+  <script src="./lib/prism-typescript.js"></script>
+  <script src="./lib/search.js"></script>
+  <script>
+    console.log(new Date())
+  </script>
+</body>
+</html>
