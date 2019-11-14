@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Canvas-letter</title>
+  <style>
+    :root {
+      --bgC: #222;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    canvas {
+      background-color: var(--bgC);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    // 自调用函数
+    (function () {
+      // 设置宽高
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+      // 监听浏览器发生变化
+      window.onresize = arguments.callee
+    })();
+
+    /*
+    * 封装: 获取两数字之间的随机数
+    * @param {Number} [min]
+    * @param {Number} [max]
+    * @return {Number}
+    */ 
+    function random(min, max) {
+      return Math.floor(Math.random() * (max+1 - min) + min)
+    }
+
+    function Letter() {
+      this.canvas = document.querySelector('#canvas')
+      this.ctx = this.canvas.getContext('2d')
+      this.W = window.innerWidth
+      this.H = window.innerHeight
+      this.letters = ["🍁","☆"]
+      this.letter = this.letters[random(0, this.letters.length-1)]
+    }
+    Letter.prototype = {
+      init () {
+        this.x = this.W / 2
+        this.y = this.H
+        this.vx = (Math.random() * 8) - 4
+        this.vy = (Math.random() * 8) - 4
+        this.ch = 155*(Math.random() * 8)
+        this.cs = 100*(Math.random() * 8)
+        this.cl = 50
+        this.ca = 0.8*(Math.random() * 8)
+        this.color = `hsla(${this.ch}, ${this.cs}%, ${this.cl}%, ${this.ca})`
+      },
+      draw () {
+        this.ctx.font = '40px sans-serif'
+        this.ctx.fillStyle = this.color
+        this.ctx.fillText(this.letter, this.x, this.y)
+      },
+      move () {
+        this.x += this.vx
+        this.y += this.vy
+        this.y *= 0.996
+        this.ch += 0.8
+        if (this.ch >= 320) {
+          this.cl = 0
+          this.init()
+        }
+        this.color = `hsla(${this.ch}, ${this.cs}%, ${this.cl}%, ${this.ca})`
+        this.draw()
+      }
+    }
+
+    function Game() {
+      this.arr = []
+      this.num = 300
+      this.time = 15
+      this.bgc = '#000'
+    }
+    Game.prototype = {
+      init () {
+        for (let i = 0; i < this.num; i++) {
+          setTimeout(() => {
+            this.letter = new Letter()
+            this.letter.init()
+            this.letter.draw()
+            this.arr.push(this.letter)
+          }, this.time * i)
+        }
+      },
+      run () {
+        setInterval(() => {
+          this.letter.ctx.fillStyle = this.bgc
+          this.letter.ctx.fillRect(0, 0, this.letter.W, this.letter.H)
+          for (item of this.arr) {
+            item.move()
+          }
+        }, 1000/50)
+      }
+    }
+
+    const game = new Game()
+    game.init()
+    game.run()
+
+    window.onresize = function () {
+      window.location.reload()
+    }
+
+  </script>
+</body>
+</html>

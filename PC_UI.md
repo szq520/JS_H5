@@ -34,9 +34,73 @@
 		   },
 	  }
  ```
+ > iview内置css操作
+
+ ```css
+ 1.table表格去边框
+ /deep/.small-table .ivu-table-cell {
+   padding: 0px;
+ }
+ /deep/.ivu-table .demo-table-info-row td {
+   font-size: 13px;
+   font-family: PingFang SC;
+   font-weight: 800;
+   background: #fff;
+   color: rgba(0, 113, 206, 1);
+ }
+ /deep/.ivu-card-body {
+   padding: 0;
+ }
+ /deep/ .ivu-table-wrapper {
+   border: none;
+ }
+ /deep/ .ivu-table:before {
+   content: "";
+   width: 100%;
+   height: 0px;
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   z-index: 1;
+ }
+ /deep/.ivu-table:after {
+   content: "";
+   width: 0px;
+   height: 100%;
+   position: absolute;
+   top: 0;
+   right: 0;
+   z-index: 3;
+ }
+ /deep/.ivu-table td {
+   border-bottom: none !important;
+ }
+ /deep/.ivu-row {
+   border: none !important;
+ }
+ /deep/.ivu-table-wrapper {
+   border: none !important;
+ }
+ /deep/.ivu-table-header th {
+   // color:#FFD3B4;
+   font-weight: bold;
+   background-color: #fff;
+   border: none;
+ }
  
- ```
- 3.
+ 
+2. tab去边框
+/deep/.ivu-tabs-bar {
+  margin-top: 20px;
+  border-bottom: none;
+  display: flex;
+  justify-content: center;
+}
+
+
+3. table去滚动条
+  .ivu-table-overflowX::-webkit-scrollbar {display: none;}
+ 
  ```
   
  ```
