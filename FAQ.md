@@ -11,3 +11,33 @@
   }, {})
   console.log(objs) //{序列: 11, 姓名: "张三"}
 ```
+
+````
+1.移动端fixed定位按钮在底部，键盘弹起，底部按钮顶上去
+   <v-footer class="vfooter" v-show="isOriginHei"/>
+    data() {
+       return {
+         screenHeight: document.body.clientHeight, // 这里是给到了一个默认值 （这个很重要），
+         originHeight: document.body.clientHeight, //默认高度在watch里拿来做比较
+         isOriginHei: true // 这个属性是固定定位按钮的显隐开关
+       };
+     },
+	 mounted() {
+	     const that = this;
+	     window.onresize = () => {
+	       return (() => {
+	         window.screenHeight = document.body.clientHeight;
+	         that.screenHeight = window.screenHeight;
+	       })();
+	     };
+	   },
+	   watch: {
+	     screenHeight(val) {
+	       if (this.originHeight != val) {
+	         this.isOriginHei = false;
+	       } else {
+	         this.isOriginHei = true;
+	       }
+	     }
+	   }
+````
