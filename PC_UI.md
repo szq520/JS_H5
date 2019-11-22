@@ -103,6 +103,14 @@
  
  ```
   
- ```
- 4.
+>iview 打包不显示问题修复
+
+ ```js
+    找到 build 目录下 webpack.prod.conf.js 文件，
+    rules: utils.styleLoaders({
+    sourceMap: config.build.productionSourceMap,
+    extract: ture,
+    usePostCSS: true
+    })
+  把extract改成false即可
  ```
