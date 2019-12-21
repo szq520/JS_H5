@@ -72,4 +72,44 @@
    arr = arrayUnique2( 数组,'指定元素');
  ```
  
+ >ELement date-picker日期选择限定时间区
  
+ ```js
+ <el-date-picker v-model="value2" align="right" type="date" placeholder="选择日期" :picker-options="startDatePicker">
+ </el-date-picker>
+ <el-date-picker v-model="value3" align="right" type="date" placeholder="选择日期" :picker-options="startDatePicker">
+ </el-date-picker>
+ 
+ data(){
+	 return{
+		 value2: '',
+		 value3: '',
+		 startDatePicker: this.beginDate(),
+		 endDatePicker: this.processDate(),
+	 }
+ },
+ methods:{
+	 beginDate() {
+	   let self = this
+	   return {
+	     disabledDate(time) {
+	       return time.getTime() > Date.now() //开始时间不选时，结束时间最大值小于等于当天
+	     }
+	   }
+	 },
+	 //提出结束时间必须大于提出开始时间
+	 processDate() {
+	   let self = this
+	   return {
+	     disabledDate(time) {
+	       if (self.value2) {
+	         return new Date(self.value2).getTime() > time.getTime() || time.getTime() > Date.now()
+	       } else {
+	         return time.getTime() > Date.now() //开始时间不选时，结束时间最大值小于等于当天
+	       }
+	     }
+	   }
+	 }
+ }
+ 
+ ```
