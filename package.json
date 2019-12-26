@@ -1,5 +1,5 @@
 {
   "scripts": {
-    "start": "docsify serve --open -p 8888"
+    "dev": "docsify serve --open -p 8888"
   }
 }

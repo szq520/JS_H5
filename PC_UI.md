@@ -114,3 +114,46 @@
     })
   把extract改成false即可
  ```
+ 
+ >element slider滑块气泡tooltip样式修改
+ 
+ ```css
+ <el-slider v-model="orderForm.bandWidth" placement="top"  tooltip-class="tooltip" popper-class="test" />
+ .el-tooltip__popper[x-placement^=top] .popper__arrow {
+   border-top-color: #9d94ee !important;
+ }
+ .el-tooltip__popper[x-placement^=top] .popper__arrow:after {
+   border-top-color: #9d94ee !important;
+ }
+ .test {
+   background: #9d94ee !important;
+ }
+ .tooltip {
+   background: #9d94ee !important;
+ }
+ 美化format-tooltip 滑块气泡tooltip样式
+  <el-slider v-model="orderForm.bandWidth" placement="top" :format-tooltip="formatTooltip"/>
+ formatTooltip(val) {
+     /* 处理小于或大于指定值 */
+     if (val < 50) {
+         this.orderForm.bandWidth = 50
+     } ease if (val > 3000) {
+         this.orderForm.bandWidth = 3000
+     }
+     /* 自定义mask文字颜色 */
+     const customClassValue = document.getElementsByClassName('el-slider__marks-text')
+     for (let i = 0; i < customClassValue.length; i++) {
+         let value = customClassValue[i].innerHTML
+         /* 去除Masks的单位(1000M => 1000) */
+         value = value.substring(0, value.length - 1)
+         /* 当滑块的值大于mask时改变颜色 */
+         if (val >= value) {
+             customClassValue[i].style.color = '#FFFFFF'
+         } else {
+             customClassValue[i].style.color = '#717171'
+         }
+     }
+     /* Tooltip增加单位 */
+     return val + 'M'
+
+ ```
