@@ -164,6 +164,6 @@
    <scroller :on-refresh="loadTop" :on-infinite="loadBottom" ref="scrollers"></scroller>
    scroller组件:bug 触发 :on-infinite="loadBottom" 加载更多
    设置transform = `translate3d(0px, 0px, 0px) scale(1)`;
-    this.$refs.scrollers.scrollTo(0, 0);
-    this.$refs.scrollers.$el.firstChild.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
+   this.$refs.scrollers.scrollTo(0, 0);
+   this.$refs.scrollers.$el.firstChild.style.transform = `translate3d(0px, 0px, 0px) scale(1)`;
  ```
