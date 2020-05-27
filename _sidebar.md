@@ -28,40 +28,40 @@
   + [+ ES6 入门笔记](js-es6)
   + [+ Js 插件](js-plugin)
 
-<!-- - **TypeScript**
+ - **TypeScript**
   + [+ TS 入门笔记](ts)
- -->
+ 
 - **前端框架**
   + [+ vue.js 入门笔记](vue)
   + [+ vue-cli 脚手架](vue-cli)
-<!--  + [+ react.js 入门笔记](react) -->
+   + [+ react.js 入门笔记](react)
   + [+ mpvue 开发笔记](mpvue)
   + [+ 开发项目遇到的一些问题](vue-plugin)
-  <!-- + [+ react 脚手架](create-react-app) -->
+  + [+ react 脚手架](create-react-app) 
 
-<!-- - **Webpack** -->
-  <!-- + [简单配置webpack](webpack) -->
+ - **Webpack** 
+   + [简单配置webpack](webpack) 
 
-<!-- - **Node.js**
+ - **Node.js**
   + [+ 部署阿里云 Node 服务器](nodejs)
   + [+ 使用 Node 操作 MySQL](node-mysql)
   + [+ 使用 Mongoose 进行增删改查](node-mongoose)
   + [+ Express 框架入门](express)
   + [+ Express 脚手架](express-generator)
- -->
-<!--- **Three.js**
-     - [+ 入门笔记](three-base) -->
+ 
+- **Three.js**
+     - [+ 入门笔记](three-base) 
 
-<!-- - **数据库**
+ - **数据库**
   + [+ MySQL](mysql)
   + [+ MongoDB](mongodb)
- -->
-<!-- - **开发者工具**
+ 
+- **开发者工具**
   + [+ git](git)
   + [+ npm](npm)
   + [+ Editor](sublime)
   + [+ Chrome 插件](chrome)
- -->
+ 
 - **开发常见问题**
   + [+ 前端开发常见问题](FAQ)
   + [+ 微信端常见问题](weixin)
