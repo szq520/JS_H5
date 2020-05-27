@@ -1,11 +1,11 @@
 
-<!-- - **首页**
-  + [Home](home) -->
+ - **首页**
+  + [Home](home)
 
-<!-- - **第三方** -->
-  <!-- + [+ 支付宝](alipay) -->
-  <!-- + [+ 微信](weixin) -->
-  <!-- + [+ QQ](qq) -->
+ - **第三方** -->
+   + [+ 支付宝](alipay) 
+   + [+ 微信](weixin) 
+   + [+ QQ](qq) 
 
 - **HTML**
   + [+ input 文件上传](upload-file)
@@ -50,7 +50,7 @@
   + [+ Express 脚手架](express-generator)
  
 - **Three.js**
-     - [+ 入门笔记](three-base) 
+   - [+ 入门笔记](three-base) 
 
  - **数据库**
   + [+ MySQL](mysql)
