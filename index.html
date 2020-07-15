@@ -11,15 +11,8 @@
   <meta name="description" content="------------------------">
   <link rel="stylesheet" href="./lib/vue.css">
   <link rel="stylesheet" href="./lib/main.css">
-  <script>
-    var _hmt = _hmt || [];
-    // (function () {
-    //   var hm = document.createElement("script");
-    //   hm.src = "https://hm.baidu.com/hm.js?fde5bc73137b15d09b1686fe514b662a";
-    //   var s = document.getElementsByTagName("script")[0];
-    //   s.parentNode.insertBefore(hm, s);
-    // })();
-  </script>
+      <script src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.0.min.js"></script>
+      <script src="https://files.cnblogs.com/files/liuzhou1/L2Dwidget.min.js"></script>
 </head>
 <body>
   <div id="app"></div>
@@ -62,8 +55,29 @@
   <script src="./lib/prism-tsx.js"></script>
   <script src="./lib/prism-typescript.js"></script>
   <script src="./lib/search.js"></script>
-  <script>
-    console.log(new Date())
-  </script>
+      <script>
+        L2Dwidget.init({
+          model: {
+            // jsonPath:"https://unpkg.com/live2d-widget-model-hijiki/assets/hijiki.model.json",
+            jsonPath:
+              "https://unpkg.com/live2d-widget-model-tororo/assets/tororo.model.json",
+          },
+          display: {
+            position: "left",
+            width: 60,
+            height: 120,
+            hOffset: 50,
+            vOffset: -50,
+          },
+          mobile: {
+            show: true,
+            scale: 0.5,
+          },
+          react: {
+            opacityDefault: 0.9,
+            opacityOnHover: 0.2,
+          },
+        });
+      </script>
 </body>
 </html>
